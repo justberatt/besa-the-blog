@@ -19,7 +19,7 @@ const App = () => {
           title={post.title}
           author={post.author}
           excerpt={post.excerpt}
-          coverImage={post.coverImage.url}
+          coverImage={post.coverImage?.url}   
           createdAt={post.createdAt}
           readingTime={post.readingTime}
           />

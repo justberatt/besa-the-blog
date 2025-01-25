@@ -1,5 +1,4 @@
 const Entry = (props) => {
-    console.log(props)
     return (
         <a href="#" className="entries">
             <article>
@@ -15,7 +14,12 @@ const Entry = (props) => {
                     <p>{props.excerpt}</p>
                 </div>
                 <div className="article-img__container">
-                    <img className="article_img" src={props.coverImage}/>
+                    <img
+                        className="article_img"
+                        src={`http://localhost:1337${props.coverImage}`}
+                        alt={props.title}
+                        style={{ maxWidth: '100%', height: 'auto' }}
+                    />
                 </div>
             </article>
         </a>
