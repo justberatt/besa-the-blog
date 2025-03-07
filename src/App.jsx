@@ -8,7 +8,7 @@ const BASE_URL = import.meta.env.VITE_STRAPI_URL || "https://besa-the-blog.onren
 const getFullImageUrl = (imagePath) => {
   if (!imagePath) return "";
   const cleanImagePath = imagePath.startsWith('/') ? imagePath.slice(1) : imagePath;
-  return `${BASE_URL}${cleanImagePath}`;
+  return `${BASE_URL}/${cleanImagePath}`;
 };
 
 
