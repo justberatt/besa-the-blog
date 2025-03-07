@@ -1,4 +1,7 @@
+import PropTypes from 'prop-types';
+
 const Entry = (props) => {
+    console.log(props)
     return (
         <a href="#" className="entries">
             <article>
@@ -16,7 +19,7 @@ const Entry = (props) => {
                 <div className="article-img__container">
                     <img
                         className="article_img"
-                        src={`http://localhost:1337${props.coverImage}`}
+                        src={props.coverImage}
                         alt={props.title}
                         style={{ maxWidth: '100%', height: 'auto' }}
                     />
@@ -26,4 +29,12 @@ const Entry = (props) => {
     )
 }
 
+Entry.propTypes = {
+    title: PropTypes.string.isRequired,
+    author: PropTypes.string,
+    excerpt: PropTypes.string,
+    coverImage: PropTypes.string, // Ensure this is a string URL
+    createdAt: PropTypes.string,
+    readingTime: PropTypes.number,
+  };
 export default Entry
