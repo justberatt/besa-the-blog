@@ -3,6 +3,15 @@ import Entry from "./components/Entry"
 import axios from 'axios'
 import './App.css'
 
+const BASE_URL = import.meta.env.VITE_STRAPI_URL || "https://besa-the-blog.onrender.com"
+
+const getFullImageUrl = (imagePath) => {
+  if (!imagePath) return "";
+  const cleanImagePath = imagePath.startsWith('/') ? imagePath.slice(1) : imagePath;
+  return `${BASE_URL}${cleanImagePath}`;
+};
+
+
 const App = () => {
   const [posts, setPosts] = useState([])
 
@@ -13,13 +22,17 @@ const App = () => {
   }, [])
   
   const entries = posts.map(post => {
+
+    const imagePath = post.coverImage.url; // Adjust this based on actual API response
+    const fullImageUrl = getFullImageUrl(imagePath);
+
     return (
       <div key={post.id}>
         <Entry 
           title={post.title}
           author={post.author}
           excerpt={post.excerpt}
-          coverImage={post.coverImage?.url}   
+          coverImage={fullImageUrl}   
           createdAt={post.createdAt}
           readingTime={post.readingTime}
           />
