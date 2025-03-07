@@ -7,7 +7,7 @@ const App = () => {
   const [posts, setPosts] = useState([])
 
   useEffect(() => {
-    axios.get('http://localhost:1337/api/blog-posts?populate=*')
+    axios.get('https://besa-the-blog.onrender.com/api/blog-posts?populate=*')
       .then(res => setPosts(res.data.data))
       .catch(error => console.error(error))
   }, [])
