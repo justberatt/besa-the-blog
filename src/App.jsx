@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import Entry from "./components/Entry"
+import Header from "./components/Header.jsx"
 import axios from 'axios'
 import './App.css'
 
@@ -25,6 +26,7 @@ const App = () => {
   const entries = posts.map(post => {
     const imagePath = post.coverImage.url; // Adjust this based on actual API response
     const fullImageUrl = getFullImageUrl(imagePath);
+    console.log(fullImageUrl)
 
     return (
       <div key={post.id}>
@@ -43,7 +45,7 @@ const App = () => {
 
   return (
     <>
-      <h1>Bésà</h1>
+      <Header />
       {entries}
     </>
   )
