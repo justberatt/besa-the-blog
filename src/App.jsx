@@ -23,7 +23,6 @@ const App = () => {
   }, [])
   
   const entries = posts.map(post => {
-
     const imagePath = post.coverImage.url; // Adjust this based on actual API response
     const fullImageUrl = getFullImageUrl(imagePath);
 
@@ -44,7 +43,7 @@ const App = () => {
 
   return (
     <>
-      <h1>Besa Blog</h1>
+      <h1>Bésà</h1>
       {entries}
     </>
   )

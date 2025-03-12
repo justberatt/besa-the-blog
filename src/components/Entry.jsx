@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types';
 
 const Entry = (props) => {
-    console.log(props)
     return (
         <a href="#" className="entries">
             <article>
