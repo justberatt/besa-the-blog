@@ -2,10 +2,10 @@ import PropTypes from 'prop-types';
 
 const Entry = (props) => {
     return (
-        <a href="#" className="entries">
-            <article>
+        <a href="#" className="entry">
+            <article className="entry-article">
                 <div className="article_text">
-                    <h2>{props.title}</h2>
+                    <h2 className="article-title">{props.title}</h2>
                     <div className="article_info">
                         <p>
                             {new Date(props.createdAt).toISOString().split('T')[0]}

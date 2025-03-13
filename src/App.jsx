@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react'
 import Entry from "./components/Entry"
 import Header from "./components/Header.jsx"
 import axios from 'axios'
-import './App.css'
 
 const BASE_URL = import.meta.env.VITE_STRAPI_URL || "https://besa-the-blog.onrender.com"
 
