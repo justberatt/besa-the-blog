@@ -3,13 +3,11 @@ import Entry from "./components/Entry"
 import Header from "./components/Header.jsx"
 import axios from 'axios'
 
-const BASE_URL = import.meta.env.VITE_STRAPI_URL || "https://besa-the-blog.onrender.com"
-
 const getFullImageUrl = (imagePath) => {
-  if (!imagePath) return "";
-  const cleanBaseUrl = BASE_URL.endsWith("/") ? BASE_URL.slice(0, -1) : BASE_URL; // Remove trailing slash if it exists
-  const cleanImagePath = imagePath.startsWith("/") ? imagePath.slice(1) : imagePath; // Remove leading slash if it exists
-  return `${cleanBaseUrl}/${cleanImagePath}`;
+  if (!imagePath) return '';
+  return imagePath.startsWith('http') 
+    ? imagePath 
+    : `https://besa-the-blog.onrender.com${imagePath}`;
 };
 
 
@@ -24,6 +22,7 @@ const App = () => {
   
   const entries = posts.map(post => {
     const imagePath = post.coverImage.url; // Adjust this based on actual API response
+    console.log("Path: ", imagePath)
     const fullImageUrl = getFullImageUrl(imagePath);
     console.log(fullImageUrl)
 
