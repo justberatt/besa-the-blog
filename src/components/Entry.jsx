@@ -7,11 +7,11 @@ const Entry = (props) => {
                 <div className="article_text">
                     <h2 className="article-title">{props.title}</h2>
                     <div className="article-info">
-                        <p>
+                        <p className='article-info__date'>
                             {new Date(props.createdAt).toISOString().split('T')[0]}
                         </p>
-                        <p>Author: {props.author}</p>
-                        <p>Reading time: {props.readingTime} minutes.</p>
+                        <p className='article-info__author'>Author: {props.author}</p>
+                        <p className='article-info__reading-time'>Reading time: {props.readingTime} minutes.</p>
                     </div>
                     <p className='article-excerpt'>{props.excerpt}</p>
                 </div>
