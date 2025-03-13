@@ -1,5 +1,5 @@
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: "Montserrat", system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
@@ -13,8 +13,11 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+#root {
+  width: 100%;
+}
+
 a {
-  color: #646cff;
   text-decoration: inherit;
   cursor: pointer;
 }
@@ -25,8 +28,8 @@ a:hover {
 body {
   display: flex;
   margin: 0 auto;
+  width: 800px;
   min-width: 320px;
-  max-width: 800px;
   min-height: 100vh;
 }
 
@@ -34,9 +37,19 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  padding: 1em;
+  margin-top: 2em;
+}
+
+.logo {
+  color: seashell;
+  font-size: 1.5rem;
+  font-weight: 700;
 }
 
 .entry-article {
+  padding: 1em;
   margin-top: 2em;
   box-shadow: 0 0 10px lightgrey;
   border-radius: 10px;
@@ -47,14 +60,29 @@ header {
 }
 
 .article-img__container {
-  border: 1px solid red;
-  padding: 1em;
   width: 30%;
+  background-size: cover;
 }
 
-.article-title,
-.article-info {
+.article-title {
   text-align: left;
+}
+
+.article-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.article-info * {
+  margin: 0;
+  line-height: .5;
+}
+
+.article-info__date {
+  color: white;
+  opacity: 50%;
+  font-size: .8rem;
 }
 
 .article-title {
