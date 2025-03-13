@@ -8,7 +8,7 @@ const Entry = (props) => {
                     <h2 className="article-title">{props.title}</h2>
                     <div className="article-info">
                         <p className='article-info__date'>
-                            {new Date(props.createdAt).toISOString().split('T')[0]}
+                            {new Date(props.createdAt).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
                         </p>
                         <p className='article-info__author'>Author: {props.author}</p>
                         <p className='article-info__reading-time'>Reading time: {props.readingTime} minutes.</p>
