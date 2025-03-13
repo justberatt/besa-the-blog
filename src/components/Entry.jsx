@@ -6,14 +6,14 @@ const Entry = (props) => {
             <article className="entry-article">
                 <div className="article_text">
                     <h2 className="article-title">{props.title}</h2>
-                    <div className="article_info">
+                    <div className="article-info">
                         <p>
                             {new Date(props.createdAt).toISOString().split('T')[0]}
                         </p>
                         <p>Author: {props.author}</p>
                         <p>Reading time: {props.readingTime} minutes.</p>
                     </div>
-                    <p>{props.excerpt}</p>
+                    <p className='article-excerpt'>{props.excerpt}</p>
                 </div>
                 <div className="article-img__container">
                     <img
