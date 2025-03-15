@@ -53,6 +53,7 @@ body {
   display: flex;
   margin: 0 auto;
   width: 100%;
+  max-width: 1000px;
   min-width: 320px;
   min-height: 100vh;
 }
@@ -79,6 +80,7 @@ header {
 }
 
 .entry-article {
+  min-height: 140px;
   padding: 1.5em;
   margin-top: 2em;
   border: 1px solid var(--border-color);
@@ -126,8 +128,9 @@ header {
   opacity: 1;
 }
 
-.article-text {
-  flex: 1;
+.article_text {
+  /* flex: 1; */
+  width: 60%;
 }
 
 .article-img__container {
@@ -135,7 +138,8 @@ header {
   min-width: 200px;
   position: relative;
   overflow: hidden;
-  border-radius: 8px;
+  border-radius: 10px;
+  object-fit: cover;
 }
 
 .article-img__container img {
@@ -150,7 +154,7 @@ header {
 .article-title {
   text-align: left;
   font-weight: 900;
-  margin: 0 0 1em 0;
+  margin: 0;
 }
 
 .article-title:hover {
@@ -169,12 +173,31 @@ header {
 }
 
 .article-info * {
+  /* line-height: .2; */
   margin: 0;
 }
 
-.article-info__date {
+.article-info__date,
+.article-info__author,
+.article-info__reading-time {
   color: var(--text-secondary);
   font-size: 0.8rem;
+}
+
+.author {
+  position: relative;
+  font-weight: 700;
+}
+
+.author::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: .1em;
+  width: 70%;
+  height: 30%;
+  background-color: #ffa07a;
+  z-index: -1;
 }
 
 .profile-img-container-span {

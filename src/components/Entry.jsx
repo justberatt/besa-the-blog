@@ -10,8 +10,8 @@ const Entry = (props) => {
                         <p className='article-info__date'>
                             {new Date(props.createdAt).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
                         </p>
-                        <p className='article-info__author'>Author: {props.author}</p>
-                        <p className='article-info__reading-time'>Reading time: {props.readingTime} minutes.</p>
+                        <p className='article-info__author'><span className='author'>Author:</span> {props.author}</p>
+                        <p className='article-info__reading-time'><span className='reading-time'>Reading time:</span> {props.readingTime} minutes.</p>
                     </div>
                     <p className='article-excerpt'>{props.excerpt}</p>
                 </div>
