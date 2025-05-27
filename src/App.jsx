@@ -15,16 +15,17 @@ const App = () => {
   const [posts, setPosts] = useState([])
 
   useEffect(() => {
-    axios.get('http://localhost:1337/api/blog-posts?populate=*')
+    axios.get('https://remarkable-prosperity-2f9e27ed24.strapiapp.com/api/blog-posts/?populate=coverImage')
       .then(res => setPosts(res.data.data))
       .catch(error => console.error(error))
   }, [])
   
   const entries = posts.map(post => {
+    // console.log("Post: ", post)
     const imagePath = post.coverImage.url; // Adjust this based on actual API response
-    console.log("Path: ", imagePath)
+    // console.log("Path: ", imagePath)
     const fullImageUrl = getFullImageUrl(imagePath);
-    console.log(fullImageUrl)
+    // console.log(fullImageUrl)
 
     return (
       <div key={post.id}>
