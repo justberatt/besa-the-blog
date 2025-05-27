@@ -20,6 +20,7 @@ const Entry = (props) => {
                         className="article_img"
                         src={props.coverImage}
                         alt={props.title}
+                        loading='lazy'
                         style={{ maxWidth: '100%', height: 'auto' }}
                     />
                 </div>
